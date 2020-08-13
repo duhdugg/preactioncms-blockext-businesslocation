@@ -152,7 +152,7 @@ class Settings extends React.Component {
   render() {
     return (
       <div>
-        <h6>Example Settings</h6>
+        <h6>Business Location Settings</h6>
         <hr className='mb-3' />
         <Input
           label='Business Name'
