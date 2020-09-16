@@ -1,5 +1,4 @@
 import commonjs from '@rollup/plugin-commonjs'
-import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase'
@@ -18,33 +17,6 @@ const plugins = [
   commonjs(),
 ]
 
-const cjsConfig = {
-  input: 'src/BusinessLocation.jsx',
-  external: ['prop-types'],
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      sourcemap: true,
-      plugins: [
-        getBabelOutputPlugin({
-          compact: true,
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                modules: 'cjs',
-                targets: 'maintained node versions',
-              },
-            ],
-          ],
-        }),
-      ],
-    },
-  ],
-  plugins: plugins.concat(visualizer({ filename: 'stats/cjs.html' })),
-}
-
 const esmConfig = {
   input: 'src/BusinessLocation.jsx',
   external: ['prop-types'],
@@ -58,4 +30,4 @@ const esmConfig = {
   plugins: plugins.concat(visualizer({ filename: 'stats/esm.html' })),
 }
 
-export default [esmConfig, cjsConfig]
+export default [esmConfig]
