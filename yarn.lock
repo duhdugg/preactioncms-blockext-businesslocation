@@ -1502,14 +1502,14 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@preaction/bootstrap-clips@^3.0.0-beta.8":
+"@preaction/bootstrap-clips@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@preaction/bootstrap-clips/-/bootstrap-clips-3.0.0.tgz#9f03c53ce0e4d9252613bdf0844badc35c2ac2ac"
   integrity sha512-AG/xrHLiBXjnZ/KSP/sujJ8T9xzl59Q+9VnA2ywL+4aU5kd/7aSYMp1RmC+a4arzAYUQN4Xk3K/BENYk6ygijQ==
   dependencies:
     prop-types "^15.7.2"
 
-"@preaction/inputs@^3.0.0-beta.1":
+"@preaction/inputs@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@preaction/inputs/-/inputs-3.0.0.tgz#cd7fe3acbd779580580b0fe5fe3ff31b925e7642"
   integrity sha512-0vA8kvF5bf8kCm9mAAEI+zGchBLV1XtT+/7wlPgK0wH5QhqCqtUnVtJc4c+MIPs1C9lHawAzn4X7s6e1Yhzyuw==
@@ -11885,9 +11885,9 @@ write-file-atomic@^3.0.0:
     typedarray-to-buffer "^3.1.5"
 
 ws@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-6.2.1.tgz#442fdf0a47ed64f59b6a5d8ff130f4748ed524fb"
-  integrity sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-6.2.2.tgz#dd5cdbd57a9979916097652d78f1cc5faea0c32e"
+  integrity sha512-zmhltoSR8u1cnDsD43TX59mzoMZsLKqUweyYBAIvTngR3shc0W6aOZylZmq/7hqyVxPdi+5Ud2QInblgyE72fw==
   dependencies:
     async-limiter "~1.0.0"
 
