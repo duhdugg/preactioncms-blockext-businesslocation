@@ -5,7 +5,7 @@ import './mockcms.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@preaction/bootstrap-clips/dist/preaction-bootstrap-clips.css'
 
-const propsData = {
+const mockPropsData = {
   businessName: 'Boston Public Library',
   showAddress: true,
   address: {
@@ -37,7 +37,7 @@ const mockPreaction = {
     settings: {
       header: 'Component View',
       extKey: 'BusinessLocation',
-      propsData,
+      propsData: mockPropsData,
     },
   },
   editable: false,
@@ -48,46 +48,43 @@ const mockPreaction = {
   },
 }
 
-class MockCMS extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { propsData, mockPreaction }
-  }
+const copyObj = (obj) => JSON.parse(JSON.stringify(obj))
 
-  getPropsDataValueHandler(key) {
-    return (value) => {
-      this.setState((state) => {
-        const propsData = state.propsData
-        propsData[key] = value
-        state.propsData = propsData
-        return state
-      })
-    }
-  }
-
-  render() {
-    // this emulates how the component is rendered in Preaction CMS
-    return (
-      <div className='App'>
-        <Boilerplate
-          footer={
-            <Card header='Settings View' headerTheme='dark'>
-              <BusinessLocation.Settings
-                propsData={propsData}
-                getPropsDataValueHandler={this.getPropsDataValueHandler.bind(
-                  this
-                )}
-              />
-            </Card>
-          }
-        >
-          <Card header={mockPreaction.block.settings.header} headerTheme='blue'>
-            <BusinessLocation preaction={mockPreaction} {...propsData} />
+// emulates how the component is rendered in Preaction CMS
+function MockCMS(props) {
+  // STATE
+  const [propsData, setPropsData] = React.useState(mockPropsData)
+  const [preaction] = React.useState(mockPreaction)
+  // CALLBACKS
+  const getPropsDataValueHandler = React.useCallback(
+    (key) => {
+      return (value) => {
+        const pd = copyObj(propsData)
+        pd[key] = value
+        setPropsData(pd)
+      }
+    },
+    [propsData]
+  )
+  // RENDER
+  return (
+    <div className='App'>
+      <Boilerplate
+        footer={
+          <Card header='Settings View' headerTheme='dark'>
+            <BusinessLocation.Settings
+              propsData={propsData}
+              getPropsDataValueHandler={getPropsDataValueHandler}
+            />
           </Card>
-        </Boilerplate>
-      </div>
-    )
-  }
+        }
+      >
+        <Card header={preaction.block.settings.header} headerTheme='blue'>
+          <BusinessLocation preaction={preaction} {...propsData} />
+        </Card>
+      </Boilerplate>
+    </div>
+  )
 }
 
 export default MockCMS
