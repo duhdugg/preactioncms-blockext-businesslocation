@@ -69,7 +69,7 @@
     "start": "BROWSER=none DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "build": "rollup -c",
     "dev-server": "http-server dist -a localhost",
-    "test": "react-scripts test",
+    "test": "npm run prettier-check && npm run eslint-check && react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "eslint-check": "eslint --max-warnings 0 ./*.js src/*.j*",
     "prettier-check": "prettier -c ./*.json ./*.js src/*.j* public/*.html"
