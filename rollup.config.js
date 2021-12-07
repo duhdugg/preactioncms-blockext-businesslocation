@@ -30,4 +30,5 @@ const esmConfig = {
   plugins: plugins.concat(visualizer({ filename: 'stats/esm.html' })),
 }
 
-export default [esmConfig]
+const m = [esmConfig]
+export default m

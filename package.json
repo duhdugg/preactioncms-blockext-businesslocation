@@ -1,6 +1,10 @@
 {
   "name": "preactioncms-blockext-businesslocation",
   "version": "0.0.2",
+  "description": "Business Location Block Extension for Preaction CMS",
+  "repository": "https://github.com/duhdugg/preactioncms-blockext-businesslocation.git",
+  "author": "Doug Elkin <doug@dougelkin.com>",
+  "license": "MIT",
   "private": true,
   "module": "dist/preactioncms-blockext-businesslocation.esm.js",
   "files": [
@@ -8,20 +12,6 @@
     "src/*",
     "public/*"
   ],
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "rollup -c",
-    "dev-server": "http-server dist -a localhost",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "plugin:prettier/recommended",
-      "plugin:react/recommended"
-    ]
-  },
   "browserslist": {
     "production": "defaults and supports es6-module",
     "development": [
@@ -34,36 +24,54 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@preaction/bootstrap-clips": "^3.0.0",
-    "@preaction/inputs": "^3.0.0",
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.1.0",
-    "@rollup/plugin-sucrase": "^3.1.0",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.2",
-    "bootstrap": "^4.6.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@popperjs/core": "^2.11.0",
+    "@preaction/bootstrap-clips": "^5.0.0-alpha.15",
+    "@preaction/inputs": "^5.0.0-alpha.8",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-sucrase": "^4.0.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.1.3",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.1",
-    "rollup": "^2.38.0",
+    "rollup": "^2.60.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-visualizer": "^4.2.0"
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-visualizer": "^5.5.2"
   },
   "peerDependencies": {
-    "@preaction/bootstrap-clips": "^3.0.0",
-    "@preaction/inputs": "^3.0.0",
+    "@preaction/bootstrap-clips": "^5.0.0-alpha.15",
+    "@preaction/inputs": "^5.0.0-alpha.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
-  "description": "Business Location Block Extension for Preaction CMS",
-  "repository": "https://github.com/duhdugg/preactioncms-blockext-businesslocation.git",
-  "author": "Doug Elkin <doug@dougelkin.com>",
-  "license": "MIT"
+  "prettier": {
+    "jsxSingleQuote": true,
+    "semi": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended",
+      "plugin:react/recommended"
+    ]
+  },
+  "scripts": {
+    "start": "BROWSER=none DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "rollup -c",
+    "dev-server": "http-server dist -a localhost",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "eslint-check": "eslint --max-warnings 0 ./*.js src/*.j*",
+    "prettier-check": "prettier -c ./*.json ./*.js src/*.j* public/*.html"
+  }
 }

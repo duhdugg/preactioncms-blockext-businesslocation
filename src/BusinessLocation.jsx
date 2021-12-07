@@ -165,7 +165,7 @@ class Settings extends React.Component {
           value={this.props.propsData.phone}
           valueHandler={this.props.getPropsDataValueHandler('phone')}
         />
-        <Card header='Address' headerTheme='green' className={{ card: 'mb-3' }}>
+        <Card header='Address' headerTheme='green' className='mb-3'>
           <Input
             label='Street'
             value={this.props.propsData.address.street}
@@ -187,7 +187,7 @@ class Settings extends React.Component {
             valueHandler={this.getAddressValueHandler('zip')}
           />
         </Card>
-        <Card header='Hours' headerTheme='yellow' className={{ card: 'mb-3' }}>
+        <Card header='Hours' headerTheme='yellow' className='mb-3'>
           <Input
             label='Sunday'
             value={this.props.propsData.hours.sunday}
