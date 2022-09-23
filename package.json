@@ -1,6 +1,6 @@
 {
   "name": "preactioncms-blockext-businesslocation",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Business Location Block Extension for Preaction CMS",
   "repository": "https://github.com/duhdugg/preactioncms-blockext-businesslocation.git",
   "author": "Doug Elkin <doug@dougelkin.com>",
