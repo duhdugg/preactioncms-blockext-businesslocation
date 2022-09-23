@@ -17,18 +17,32 @@ const plugins = [
   commonjs(),
 ]
 
-const esmConfig = {
-  input: 'src/BusinessLocation.jsx',
-  external: ['prop-types'],
-  output: [
-    {
-      file: pkg.module,
-      format: 'esm',
-      sourcemap: true,
-    },
-  ],
-  plugins: plugins.concat(visualizer({ filename: 'stats/esm.html' })),
+const getEsmConfig = (inputFile, outputName) => {
+  return {
+    input: inputFile,
+    external: ['prop-types'],
+    output: [
+      {
+        file: `dist/${outputName}.esm.js`,
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
+    plugins: plugins.concat(
+      visualizer({ filename: `stats/${outputName}.html` })
+    ),
+  }
 }
 
-const m = [esmConfig]
+const m = [
+  getEsmConfig(
+    'src/BusinessLocation.jsx',
+    'preactioncms-blockext-businesslocation'
+  ),
+  getEsmConfig(
+    'src/BusinessLocationSettings.jsx',
+    'preactioncms-blockext-businesslocation-settings'
+  ),
+]
+
 export default m

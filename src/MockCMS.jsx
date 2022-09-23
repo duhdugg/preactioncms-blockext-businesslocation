@@ -1,9 +1,12 @@
-import { BusinessLocation } from './BusinessLocation.jsx'
+import BusinessLocation from './BusinessLocation.jsx'
+import BusinessLocationSettings from './BusinessLocationSettings.jsx'
 import { Boilerplate, Card } from '@preaction/bootstrap-clips'
 import React from 'react'
 import './mockcms.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@preaction/bootstrap-clips/dist/preaction-bootstrap-clips.css'
+
+BusinessLocation.Settings = BusinessLocationSettings
 
 const mockPropsData = {
   businessName: 'Boston Public Library',
