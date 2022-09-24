@@ -48,10 +48,10 @@
     "rollup-plugin-visualizer": "^5.8.1"
   },
   "peerDependencies": {
-    "@preaction/bootstrap-clips": "^5.0.0-alpha.15",
-    "@preaction/inputs": "^5.0.0-alpha.8",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "@preaction/bootstrap-clips": "^5.0.0-alpha.23",
+    "@preaction/inputs": "^5.0.0-alpha.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "prettier": {
     "jsxSingleQuote": true,
